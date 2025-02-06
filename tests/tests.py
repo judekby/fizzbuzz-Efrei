@@ -1,38 +1,22 @@
-import unittest
-from io import StringIO
-import sys
-from main import fizzbuzz
+import pytest
+import main  
 
-class TestFizzBuzz(unittest.TestCase):
-    def setUp(self):
-        self.held, sys.stdout = sys.stdout, StringIO()
+def multiple_3():
+    assert main.fizzbuzz(3) == "Fizz"
+    assert main.fizzbuzz(6) == "Fizz"
+    assert main.fizzbuzz(9) == "Fizz"
 
-    def tearDown(self):
-        sys.stdout = self.held
+def multiple_5():
+    assert main.fizzbuzz(5) == "Buzz"
+    assert main.fizzbuzz(10) == "Buzz"
+    assert main.fizzbuzz(20) == "Buzz"
 
-    def test_fizzbuzz_divisible_by_3_and_5(self):
-        fizzbuzz(15)
-        self.assertEqual(sys.stdout.getvalue().strip(), "FizzBuzzBuzz")
+def multiple_3_and_5():
+    assert main.fizzbuzz(15) == "FizzBuzz"
+    assert main.fizzbuzz(30) == "FizzBuzz"
+    assert main.fizzbuzz(45) == "FizzBuzz"
 
-    def test_fizzbuzz_divisible_by_3(self):
-        fizzbuzz(9)
-        self.assertEqual(sys.stdout.getvalue().strip(), "Fizz")
-
-    def test_fizzbuzz_divisible_by_5(self):
-        fizzbuzz(10)
-        self.assertEqual(sys.stdout.getvalue().strip(), "Buzz")
-
-    def test_fizzbuzz_contains_3(self):
-        fizzbuzz(13)
-        self.assertEqual(sys.stdout.getvalue().strip(), "13Fizz")
-
-    def test_fizzbuzz_contains_5(self):
-        fizzbuzz(52)
-        self.assertEqual(sys.stdout.getvalue().strip(), "52Buzz")
-
-    def test_fizzbuzz_not_divisible_or_contains_3_or_5(self):
-        fizzbuzz(7)
-        self.assertEqual(sys.stdout.getvalue().strip(), "7")
-
-if __name__ == '__main__':
-    unittest.main()
+def not_multiple_3_et_5():
+    assert main.fizzbuzz(1) == 1
+    assert main.fizzbuzz(2) == 2
+    assert main.fizzbuzz(4) == 4
