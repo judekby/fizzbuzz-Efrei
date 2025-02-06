@@ -1,0 +1,35 @@
+name: Python Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pytest pytest-cov pytest-html  # Install pytest, pytest-cov, and pytest-html
+
+      - name: Run tests with coverage and generate HTML report
+        run: |
+          pytest --cov=fizzbuzz-Efrei/ --cov-report=html --html=reports/test_report.html  # Generate HTML report and coverage
+          
+      - name: Upload HTML report as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: reports/test_report.html  # Upload the report as an artifact
