@@ -1,0 +1,11 @@
+
+code coverage
+---------- coverage: platform darwin, python 3.12.7-final-0 ----------
+Name                                    Stmts   Miss  Cover
+-----------------------------------------------------------
+fizzbuzz-Efrei/__init__.py                  0      0   100%
+fizzbuzz-Efrei/main.py                     11      2    82%
+fizzbuzz-Efrei/tests/__init__.py            0      0   100%
+fizzbuzz-Efrei/tests/test_fizzbuzz.py      21      0   100%
+-----------------------------------------------------------
+TOTAL                                      32      2    94%
