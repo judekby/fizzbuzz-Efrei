@@ -20,7 +20,7 @@ def test_multiple_5():
 def test_multiple_3_and_5():
     assert main.fizzbuzz(15) == "FizzBuzz"
     assert main.fizzbuzz(30) == "FizzBuzz"
-    assert main.fizzbuzz(45) == "FizzBuzz"
+    assert main.fizzbuzz(45) == "FizzBuzzz"
 
 def test_not_multiple_3_et_5():
     assert main.fizzbuzz(1) == 1
