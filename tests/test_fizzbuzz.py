@@ -5,24 +5,24 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import main  
+import app  
 
 def test_multiple_3():
-    assert main.fizzbuzz(3) == "Fizz"
-    assert main.fizzbuzz(6) == "Fizz"
-    assert main.fizzbuzz(9) == "Fizz"
+    assert app.fizzbuzz(3) == "Fizz"
+    assert app.fizzbuzz(6) == "Fizz"
+    assert app.fizzbuzz(9) == "Fizz"
 
 def test_multiple_5():
-    assert main.fizzbuzz(5) == "Buzz"
-    assert main.fizzbuzz(10) == "Buzz"
-    assert main.fizzbuzz(20) == "Buzz"
+    assert app.fizzbuzz(5) == "Buzz"
+    assert app.fizzbuzz(10) == "Buzz"
+    assert app.fizzbuzz(20) == "Buzz"
 
 def test_multiple_3_and_5():
-    assert main.fizzbuzz(15) == "FizzBuzz"
-    assert main.fizzbuzz(30) == "FizzBuzz"
-    assert main.fizzbuzz(45) == "FizzBuzzz"
+    assert app.fizzbuzz(15) == "FizzBuzz"
+    assert app.fizzbuzz(30) == "FizzBuzz"
+    assert app.fizzbuzz(45) == "FizzBuzz"
 
 def test_not_multiple_3_et_5():
-    assert main.fizzbuzz(1) == 1
-    assert main.fizzbuzz(2) == 2
-    assert main.fizzbuzz(4) == 4
+    assert app.fizzbuzz(1) == 1
+    assert app.fizzbuzz(2) == 2
+    assert app.fizzbuzz(4) == 4
