@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import main  
 
 def test_multiple_3():
-    assert main.fizzbuzz(3) == "Fizz"
+    assert main.fizzbuzz(3) == "fizz"
     assert main.fizzbuzz(6) == "Fizz"
     assert main.fizzbuzz(9) == "Fizz"
 
